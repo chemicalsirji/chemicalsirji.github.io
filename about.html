@@ -151,39 +151,53 @@
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
 
 
-    <script>
-        // Prompt the user for username and password
-        var username = prompt("Enter your username:");
-        var password = prompt("Enter your password:");
-    
-        // Define the correct usernames and passwords
-        var credentials = [
-            { username: "sachin", password: "kumar" },
-            { username: "meenakshi", password: "chauhan" },
-            { username: "aditi", password: "singh" }
-            // Add more username and password pairs here as needed
-        ];
-    
-        // Check if the entered credentials match
-        var isAuthenticated = false;
-        for (var i = 0; i < credentials.length; i++) {
-            var credential = credentials[i];
-            if (username === credential.username && password === credential.password) {
-                isAuthenticated = true;
-                break;
-            }
+<!-- ...your HTML code... -->
+
+<script>
+    // Prompt the user for username and password
+    var username = prompt("Enter your username:");
+    var password = null;
+
+    // Define the correct usernames and passwords
+    var credentials = [
+        { username: "sachin", password: "kumar" },
+        { username: "meenakshi", password: "chauhan" },
+        { username: "aditi", password: "singh" }
+        // Add more username and password pairs here as needed
+    ];
+
+    // Find the corresponding password for the entered username
+    for (var i = 0; i < credentials.length; i++) {
+        var credential = credentials[i];
+        if (username === credential.username) {
+            password = prompt("Enter your password for " + username + ":");
+            break;
         }
-    
-        if (isAuthenticated) {
-            // Display the protected content
-            // document.write("<h1>Welcome to the protected webpage!</h1>");
-            // Add your desired content here
-        } else {
-            // Redirect to an unauthorized access page or display an error message
-            window.location.href = "unauthorized.html";
-            // You can create an unauthorized.html page with an appropriate message
+    }
+
+    // Check if the entered credentials match
+    var isAuthenticated = false;
+    for (var i = 0; i < credentials.length; i++) {
+        var credential = credentials[i];
+        if (username === credential.username && password === credential.password) {
+            isAuthenticated = true;
+            break;
         }
-    </script>
+    }
+
+    if (isAuthenticated) {
+        // Display the protected content
+        // document.write("<h1>Welcome to the protected webpage!</h1>");
+        // Add your desired content here
+    } else {
+        // Redirect to an unauthorized access page or display an error message
+        window.location.href = "unauthorized.html";
+        // You can create an unauthorized.html page with an appropriate message
+    }
+</script>
+
+<!-- ...rest of your HTML code... -->
+
     
 
     <!-- Template Javascript -->

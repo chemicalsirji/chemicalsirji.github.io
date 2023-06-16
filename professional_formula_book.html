@@ -152,40 +152,6 @@
 
 
 <!-- ...your HTML code... -->
-<script>
-// Prompt the user for username and password
-var username = prompt("Enter your username:");
-var password = prompt("Enter your password:");
-
-// Define the correct usernames and passwords
-var validCredentials = [
-    { username: "sachin", password: "kumar" },
-    { username: "meenakshi", password: "chauhan" },
-    { username: "aditi", password: "singh" }
-    // Add more username and password pairs here as needed
-];
-
-// Check if the entered credentials match
-var isAuthenticated = false;
-for (var i = 0; i < validCredentials.length; i++) {
-    var credential = validCredentials[i];
-    if (username === credential.username && password === credential.password) {
-        isAuthenticated = true;
-        break;
-    }
-}
-
-if (isAuthenticated) {
-    // Display the protected content
-    // document.write("<h1>Welcome to the protected webpage!</h1>");
-    // Add your desired content here
-} else {
-    // Redirect to an unauthorized access page or display an error message
-    window.location.href = "unauthorized.html";
-    // You can create an unauthorized.html page with an appropriate message
-}
-
-    </script>
 <!-- ...rest of your HTML code... -->
 
     
